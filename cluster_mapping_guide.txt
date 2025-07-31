@@ -1,0 +1,18 @@
+
+# MAPEO DE CLUSTERS SUGERIDO
+# Despues del entrenamiento, actualiza tu codigo con:
+
+# Si Cluster 0 tiene mayoria de ataques -> Anomalo
+# Si Cluster 1 tiene mayoria normal -> Normal  
+# Si Cluster 2 es mixto -> Sospechoso
+
+# En tu codigo PacketSniffer, cambia:
+clasificacion = "Normal" if cluster == 1 else "ANOMALO"
+
+# Por algo como:
+cluster_mapping = {
+    0: "ANOMALO",
+    1: "Normal", 
+    2: "Sospechoso"
+}
+clasificacion = cluster_mapping.get(cluster, "Desconocido")
